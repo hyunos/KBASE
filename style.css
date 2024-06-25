@@ -219,7 +219,7 @@
 
         .modal-body {
            overflow-y: auto;
-           max-height: calc(80vh - 20px); /* Adjust based on the fixed header height */
+           max-height: calc(80vh - 800px); /* Adjust based on the fixed header height */
            padding-right: 20px; /* Add some padding to avoid scrollbar overlap */
             }
 
