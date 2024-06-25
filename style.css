@@ -208,6 +208,7 @@
            padding: 20px;
            border: 1px solid #888;
            width: 1017px;
+		   height: 800px;
            max-width: 2000px; /* Increased max width */
            max-height: 90vh; /* Increased max height */
            overflow: hidden;
@@ -218,7 +219,7 @@
 
         .modal-body {
            overflow-y: auto;
-           max-height: calc(80vh - 160px); /* Adjust based on the fixed header height */
+           max-height: calc(80vh - 20px); /* Adjust based on the fixed header height */
            padding-right: 20px; /* Add some padding to avoid scrollbar overlap */
             }
 
