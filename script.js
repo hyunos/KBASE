@@ -122,7 +122,7 @@ window.onclick = function(event) {
 }
 
 function loadExcelData() {
-    fetch('https://raw.githubusercontent.com/hyunos/hyuno.s/main/kbase.xlsx')
+    fetch('./kbase.xlsx')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
