@@ -208,7 +208,6 @@
            padding: 20px;
            border: 1px solid #888;
            width: 1017px;
-		   height: 800px;
            max-width: 2000px; /* Increased max width */
            max-height: 90vh; /* Increased max height */
            overflow: hidden;
