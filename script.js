@@ -114,11 +114,6 @@ function closeModal() {
     modal.style.display = 'none';
 }
 
-// 모달 내용 클릭시 닫히지 않도록 수정
-document.querySelector('.modal-content').addEventListener('click', function(event) {
-    event.stopPropagation();
-});
-
 window.onclick = function(event) {
     const modal = document.getElementById('document-modal');
     if (event.target === modal) {
