@@ -218,7 +218,7 @@
 
         .modal-body {
            overflow-y: auto;
-           max-height: calc(80vh - 800px); /* Adjust based on the fixed header height */
+           max-height: calc(80vh - 160px); /* Adjust based on the fixed header height */
            padding-right: 20px; /* Add some padding to avoid scrollbar overlap */
             }
 
@@ -365,6 +365,7 @@
 	/* 호버 시 배경색 변경 */
 	color:white;
 }
+
 
 .link-button {
     width:160px;
