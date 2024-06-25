@@ -366,40 +366,6 @@
 	color:white;
 }
 
-.logging-button {
-    width:500px;
-    height:70px;
-	display:inline-block;
-	padding:10px 20px;
-	/* 버튼의 내부 여백 */
-	font-size:16px;
-	text-align:center;
-	text-decoration:none;
-	border:1px solid #3498db;
-	/* 테두리 스타일과 색상 */
-	border-radius:5px;
-	/* 테두리 곡선 */
-	background-color:white;
-	/* 배경색 */
-	color:black;
-	/* 텍스트 색상 */
-	cursor:pointer;
-	transition:all 0.3s ease;
-	/* 애니메이션 효과 */
-	border-color:black;
-	/* 호버 시 테두리 색상 변경 */
-	margin:5px auto;
-	justify-content:center;
-	/* 가로 가운데 정렬 */
-	font-family:'Nanum Gothic';
-}
-/* 버튼 호버 시 스타일 */
-.logging-button:hover {
-	background-color:black;
-	/* 호버 시 배경색 변경 */
-	color:white;
-}
-
 .link-button {
     width:160px;
     height:40px;
