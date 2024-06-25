@@ -117,15 +117,17 @@ window.onclick = function(event) {
 
 
 var userName;
-
 window.onload = function() {
-    userName = prompt("에이전트 이름을 입력하세요. \n입력하지 않으면 순로기가 됩니다.", "");
-
-    if (userName == null || userName == "") {
-        userName = "순로기";
-    }
-    var greetingElement = document.getElementById('greeting');
-    greetingElement.innerHTML = "Hej! " + userName.slice(-2);
+   userName = localStorage.getItem('userName');
+   if (!userName) {
+       userName = prompt("에이전트 이름을 입력하세요. \n입력하지 않으면 순로기가 됩니다.", "");
+       if (userName == null || userName == "") {
+           userName = "순로기";
+       }
+       localStorage.setItem('userName', userName);
+   }
+   var greetingElement = document.getElementById('greeting');
+   greetingElement.innerHTML = "Hej! " + userName.slice(-2);
 };
 </script>
     </body>
