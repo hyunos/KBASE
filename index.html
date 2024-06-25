@@ -88,6 +88,34 @@
 </div>
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+    loadCategories();
+    loadExcelData();
+    document.getElementById('search-bar').addEventListener('keypress', handleKeyPress);
+    document.querySelector('.modal .close').addEventListener('click', closeModal);
+    document.getElementById('prev-page').addEventListener('click', prevPage);
+    document.getElementById('next-page').addEventListener('click', nextPage);
+    showAllDocuments(); // 페이지가 로드될 때 전체 목록을 기본으로 표시
+});
+
+function closeModal() {
+    const modal = document.getElementById('document-modal');
+    modal.style.display = 'none';
+}
+
+// 모달 내용 클릭시 닫히지 않도록 수정
+document.querySelector('.modal-content').addEventListener('click', function(event) {
+    event.stopPropagation();
+});
+
+window.onclick = function(event) {
+    const modal = document.getElementById('document-modal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+
+
 var userName;
 
 window.onload = function() {
