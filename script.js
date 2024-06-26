@@ -653,7 +653,7 @@ function logging17() {
 	});}
 	
 function logging18() {
-	var sms1 = "제목 : [고객지원팀] (이벤트 차종) 시승 이벤트 상품권 미지급 문의_(고객명) 고객\n\n안녕하십니까\n볼보 라이프스타일 고객지원팀 " + userName + " 입니다.\n\n◻ 고객명: \n◻ 연락처: \n◻ 시승 전시장: \n\n위 고객님께서 (차종) 시승 이벤트 신청 후 (날짜)(전시장) 전시장에 방문하여 시승을 완료했으나, 상품권을 받지 못하셨다하시어 확인 및 빠른 발급 요청주셨습니다.\n\n바쁘시겠지만 고객 안내를 위해 내용 확인 후 회신 부탁드립니다.\n감사합니다.\n\n" + userName + " 드림.";
+	var sms1 = "제목 : [고객지원팀] (이벤트 차종) 시승 이벤트 상품권 미지급 문의_(고객명) 고객\n\n안녕하십니까\n볼보 라이프스타일 고객지원팀 " + userName + "입니다.\n\n◻ 고객명: \n◻ 연락처: \n◻ 시승 전시장: \n\n위 고객님께서 (차종) 시승 이벤트 신청 후 (날짜)(전시장) 전시장에 방문하여 시승을 완료했으나, 상품권을 받지 못하셨다하시어 확인 및 빠른 발급 요청주셨습니다.\n\n바쁘시겠지만 고객 안내를 위해 내용 확인 후 회신 부탁드립니다.\n감사합니다.\n\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
@@ -667,7 +667,7 @@ function logging18() {
 	});}
 	
 function hejvolvo() {
-	var sms1 = "제목: [고객지원팀] 헤이볼보앱 (문의 사항)문의\n\안녕하십니까\n고객지원팀" + userName + "입니다.\n하기 내용으로 문의주시어 확인 요청드립니다.\n\n - 고객명: \n - 연락처: \n - 차종/차대번호: \n - 앱 아이디: \n문의 사항: \n- \n감사합니다.\n\n" + userName + " 드림.";
+	var sms1 = "제목: [고객지원팀] 헤이볼보앱 (문의 사항)문의\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n하기 내용으로 문의주시어 확인 요청드립니다.\n\n - 고객명: \n - 연락처: \n - 차종/차대번호: \n - 앱 아이디: \n문의 사항: \n- \n감사합니다.\n\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
@@ -681,7 +681,7 @@ function hejvolvo() {
 	});}
 	
 function declinemarketing() {
-		var sms1 = "제목: [고객지원팀] 마케팅 수신 거부 요청\n\안녕하십니까\n고객지원팀" + userName + "입니다.\n\n - 고객명: \n - 연락처: \n 상기 고객께서 마케팅 수신 거부 요청 주시어 수정 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
+		var sms1 = "제목: [고객지원팀] 마케팅 수신 거부 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처: \n 상기 고객께서 마케팅 수신 거부 요청 주시어 수정 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
@@ -695,7 +695,7 @@ function declinemarketing() {
 	});}
 	
 function removedata() {
-		var sms1 = "제목: [고객지원팀] 마케팅 수신 거부 요청\n\안녕하십니까\n고객지원팀" + userName + "입니다.\n\n - 고객명: \n - 연락처: \n 상기 고객께서 고객 정보 삭제 요청 주시어 삭제 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
+		var sms1 = "제목: [고객지원팀] 마케팅 수신 거부 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처: \n 상기 고객께서 고객 정보 삭제 요청 주시어 삭제 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
@@ -709,7 +709,7 @@ function removedata() {
 	});}
 	
 function ex30cancel() {
-		var sms1 = "제목: [고객지원팀] EX30 예약 취소 요청\n\안녕하십니까\n고객지원팀" + userName + "입니다.\n\n - 고객명: \n - 연락처: \n - 예약 전시장: \n - 예약 일자: \n - 예약 번호(모르면 N/A): KR-  \n상기 고객께서 볼보 자동차 홈페이지를 통해 예약 취소가 불가능하시어 취소 요청 드립니다.\n바쁘시겠지만 고객 대응 후 회신 부탁드립니다. \n감사합니다.\n\n" + userName + " 드림.";
+		var sms1 = "제목: [고객지원팀] EX30 예약 취소 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처: \n - 예약 전시장: \n - 예약 일자: \n - 예약 번호(모르면 N/A): KR-  \n상기 고객께서 볼보 자동차 홈페이지를 통해 예약 취소가 불가능하시어 취소 요청 드립니다.\n바쁘시겠지만 고객 대응 후 회신 부탁드립니다. \n감사합니다.\n\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
