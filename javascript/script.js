@@ -686,7 +686,7 @@ function declinemarketing() {
     navigator.clipboard.writeText(sms1)
         .then(function() {
 		console.log('default mail Copied');
-            alert('헤이볼보앱 문의 템플릿 복사되었습니다.');
+            alert('마케팅 수신 거부 문의 템플릿 복사되었습니다.');
 	})
         .catch(function(error) {
 		console.error('클립보드 복사 실패: ',
@@ -700,7 +700,7 @@ function removedata() {
     navigator.clipboard.writeText(sms1)
         .then(function() {
 		console.log('default mail Copied');
-            alert('헤이볼보앱 문의 템플릿 복사되었습니다.');
+            alert('DMS 정보 삭제 문의 템플릿 복사되었습니다.');
 	})
         .catch(function(error) {
 		console.error('클립보드 복사 실패: ',
