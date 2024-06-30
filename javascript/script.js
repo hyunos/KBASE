@@ -5,6 +5,27 @@ const categories = {
     "Other (기타)": ["EM", "RSA", "Marketing", "Hej Volvo", "Volvo Cars", "TMAP Auto", "NUGU Auto", "FLO", "All"]
 };
 
+   loadAnnouncement();
+};
+function loadAnnouncement() {
+   fetch('./javascript/announcement.txt')
+       .then(response => {
+           if (response.ok) {
+               return response.text();
+           } else {
+               throw new Error('공지사항을 불러올 수 없습니다.');
+           }
+       })
+       .then(data => {
+           if (data.trim() !== "") {
+               alert(data);
+           }
+       })
+       .catch(error => {
+           console.error('Error loading announcement:', error);
+       });
+}
+
 let documents = [];
 let filteredDocuments = [];
 let currentPage = 1;
