@@ -5,9 +5,6 @@ const categories = {
     "Other (기타)": ["EM", "RSA", "Marketing", "Hej Volvo", "Volvo Cars", "TMAP Auto", "NUGU Auto", "FLO", "All"]
 };
 
-   loadAnnouncement();
-};
-
 let documents = [];
 let filteredDocuments = [];
 let currentPage = 1;
