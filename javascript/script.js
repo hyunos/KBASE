@@ -7,24 +7,6 @@ const categories = {
 
    loadAnnouncement();
 };
-function loadAnnouncement() {
-   fetch('./javascript/announcement.txt')
-       .then(response => {
-           if (response.ok) {
-               return response.text();
-           } else {
-               throw new Error('공지사항을 불러올 수 없습니다.');
-           }
-       })
-       .then(data => {
-           if (data.trim() !== "") {
-               alert(data);
-           }
-       })
-       .catch(error => {
-           console.error('Error loading announcement:', error);
-       });
-}
 
 let documents = [];
 let filteredDocuments = [];
