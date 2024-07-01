@@ -1,8 +1,8 @@
 const categories = {
-    "Electric(순수 전기)": ["C40 Recharge", "XC40 Recharge", "EX30"],
-    "Mild hybrids (마일드 하이브리드)": ["XC40", "XC60", "XC90", "S60", "S90", "V60CC", "V90CC"],
-    "Plug-in hybrids (플러그인 하이브리드)": ["XC60 Recharge", "XC90 Recharge", "S90 Recharge"],
-    "Other (기타)": ["EM", "RSA", "Marketing", "Hej Volvo", "Volvo Cars", "TMAP Auto", "NUGU Auto", "FLO", "All"]
+    "Android Automotive": ["Android"],
+    "Sensus": ["Sensus"],
+    "SKT": ["TMAP Auto", "Nugu Auto", "FLO"],
+    "Other (기타)": ["EM", "RSA", "Marketing", "Hej Volvo", "Volvo Cars", "All"]
 };
 
 let documents = [];
