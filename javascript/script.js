@@ -2,7 +2,7 @@ const categories = {
     "Android Automotive": ["Android"],
     "Sensus": ["Sensus"],
     "SKT": ["TMAP Auto", "NUGU Auto", "FLO"],
-    "Other (기타)": ["EM", "RSA", "Marketing", "Hej Volvo", "Volvo Cars", "All"]
+    "Other (기타)": ["EM", "RSA", "Marketing", "Hej Volvo", "Volvo Cars", "Mail", "All"]
 };
 
 let documents = [];
@@ -99,15 +99,16 @@ function showAllDocuments(element) {
 }
 
 function openDocument(howto, title, date, content, image, category) {
-    const modal = document.getElementById('document-modal');
-    document.getElementById('modal-title').textContent = title;
-    document.getElementById('modal-category').textContent = `${category} | ${date}`; // 카테고리 옆에 날짜 추가
-    document.getElementById('modal-howto').textContent = howto !== 'undefined' ? howto : ''; // howto 추가
-    const imageHTML = image ? `<img src="images/${image}" alt="${title}" style="max-width:100%;">` : '';
-    const contentHTML = content ? `${content}` : ''; // 구분선 추가
-    document.getElementById('modal-content').innerHTML = imageHTML + contentHTML; // HTML 코드로 삽입
-    modal.style.display = 'block';
+   const modal = document.getElementById('document-modal');
+   document.getElementById('modal-title').textContent = title;
+   document.getElementById('modal-category').textContent = `${category} | ${date}`; // 카테고리 옆에 날짜 추가
+   document.getElementById('modal-howto').textContent = howto !== 'undefined' ? howto : ''; // howto 추가
+   const imageHTML = image ? `<img src="images/${image}" alt="${title}" style="max-width:100%;">` : '';
+   const contentHTML = content ? `${content}` : ''; // 구분선 추가
+   document.getElementById('modal-content').innerHTML = imageHTML + contentHTML; // HTML 코드로 삽입
+   modal.style.display = 'block';
 }
+
 
 function closeModal() {
     const modal = document.getElementById('document-modal');
@@ -122,36 +123,58 @@ window.onclick = function(event) {
 }
 
 function loadExcelData() {
-    fetch('./db/kbase.xlsx')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.arrayBuffer();
-        })
-        .then(data => {
-            const workbook = XLSX.read(data, { type: 'array' });
-            const sheetName = workbook.SheetNames[0];
-            const sheet = workbook.Sheets[sheetName];
-            documents = XLSX.utils.sheet_to_json(sheet, { raw: false, dateNF: 'yyyy-mm-dd' });
-            documents.forEach(doc => {
-                if (doc.Date) {
-                    doc.Date = XLSX.SSF.format('yyyy-mm-dd', new Date(doc.Date));
-                }
-                if (doc.Title) {
-                    doc.Title = doc.Title.replace(/"/g, '&quot;');
-                }
-                if (doc.Data) {
-                    doc.Data = doc.Data.replace(/"/g, '&quot;');
-                }
-            });
-            filteredDocuments = documents;
-            displayDocuments(documents);
-        })
-        .catch(error => {
-            console.error('Error loading Excel data:', error);
-        });
+   fetch('./db/kbase.xlsx')
+       .then(response => {
+           if (!response.ok) {
+               throw new Error(`HTTP error! status: ${response.status}`);
+           }
+           return response.arrayBuffer();
+       })
+       .then(data => {
+           const workbook = XLSX.read(data, { type: 'array' });
+           const sheetName = workbook.SheetNames[0];
+           const sheet = workbook.Sheets[sheetName];
+           documents = XLSX.utils.sheet_to_json(sheet, { raw: false, dateNF: 'yyyy-mm-dd' });
+           documents.forEach(doc => {
+               if (doc.Date) {
+                   doc.Date = XLSX.SSF.format('yyyy-mm-dd', new Date(doc.Date));
+               }
+               if (doc.Title) {
+                   doc.Title = doc.Title.replace(/"/g, '&quot;');
+               }
+               if (doc.Data) {
+                   doc.Data = doc.Data.replace(/"/g, '&quot;');
+               }
+           });
+           filteredDocuments = documents;
+           addTemplateButton();
+           displayDocuments();
+       })
+       .catch(error => {
+           console.error('Error loading Excel data:', error);
+       });
 }
+
+function addTemplateButton() {
+   const templateDoc = documents.find(doc => doc.Title === "각종 템플릿");
+   if (templateDoc && !document.getElementById('template-button')) {
+       const templateButton = document.createElement('button');
+templateButton.id
+= 'template-button';
+       templateButton.className = 'link-button'; // class 적용
+       templateButton.textContent = "각종 템플릿 열기";
+       templateButton.onclick = () => openDocument(
+           templateDoc.howto || '',
+           templateDoc.Title,
+           templateDoc.Date,
+           templateDoc.Data.replace(/\\/g, '\\\\').replace(/`/g, '\\`'),
+           templateDoc.Image || '',
+           templateDoc.Category
+       );
+       document.getElementById('template-button-container').appendChild(templateButton);
+   }
+}
+
 
 function loadCategories() {
     const categoryList = document.getElementById('category-list');
