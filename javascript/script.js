@@ -1,7 +1,7 @@
 const categories = {
     "Android Automotive": ["Android"],
     "Sensus": ["Sensus"],
-    "SKT": ["TMAP Auto", "Nugu Auto", "FLO"],
+    "SKT": ["TMAP Auto", "NUGU Auto", "FLO"],
     "Other (기타)": ["EM", "RSA", "Marketing", "Hej Volvo", "Volvo Cars", "All"]
 };
 
