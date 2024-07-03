@@ -241,17 +241,7 @@ function copyEmail(text) {
     alert('이메일 주소가 클립보드에 복사되었습니다.');
 }
     
-var userName;
 
-window.onload = function() {
-    userName = prompt("에이전트 이름을 입력하세요. \n입력하지 않으면 순로기가 됩니다.", "");
-
-    if (userName == null || userName == "") {
-        userName = "순로기";
-    }
-    var greetingElement = document.getElementById('greeting');
-    greetingElement.innerHTML = "Hej! " + userName.slice(-2);
-};
 
 //기본 템플릿
 function logging1() {
