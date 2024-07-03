@@ -695,7 +695,7 @@ function declinemarketing() {
 	});}
 	
 function removedata() {
-		var sms1 = "제목: [고객지원팀] 마케팅 수신 거부 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처: \n 상기 고객께서 고객 정보 삭제 요청 주시어 삭제 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
+		var sms1 = "제목: [고객지원팀] 고객 정보 삭제 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처: \n 상기 고객께서 고객 정보 삭제 요청 주시어 삭제 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
@@ -784,14 +784,23 @@ function copylogging6() {
     var agentanswer= "Agent 답변: ";
     var emailText = customerName + "\n" + carNumber + "\n" + carVin + "\n" +  serviceCenter + "\n" + cxneeds + "\n" + needvalue + "\n" + needvalue + "\n" + needvalue + "\n" + agentanswer;
     // Clipboard API를 사용하여 텍스트를 복사합니다.
-    navigator.clipboard.writeText(emailText)
-        .then(function() {
-		console.log('메일 양식이 복사되었습니다.');
-            alert('메일 양식이 복사되었습니다.');
-	})
-        .catch(function(error) {
-		console.error('클립보드 복사 실패: ',
-		error);
-            alert('클립보드 복사 실패: ' + error);
-	});
+    var textarea = document.createElement('textarea');
+    textarea.value = emailText;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'absolute';
+    textarea.style.left = '-9999px'; // Move off-screen
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? '복사되었습니다.' : '복사 실패';
+        console.log(msg);
+        alert(msg);
+    } catch (err) {
+        console.error('복사 실패: ', err);
+        alert('복사 실패: ' + err);
+    }
+
+    document.body.removeChild(textarea);
 }
