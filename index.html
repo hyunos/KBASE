@@ -84,6 +84,7 @@
 	<a href="https://www.vckapptest.com/html/main/" target="_blank" style="text-align: center;">
 	<button class="link-button"><span>Hej Volvo</span></button>
 	</a>
+	<input type="button" class="link-button" value="팝업창 호출" onclick="template();" />
 		</div>
 
         <div id="selected-category">선택된 카테고리:</div>
@@ -156,6 +157,8 @@ window.onload = function() {
    var greetingElement = document.getElementById('greeting');
    greetingElement.innerHTML = "Hej! " + userName.slice(-2);
 };
+
+  function template() { window.open("./template.html", "a", "width=1000, height=473"); }
 </script>
     </body>
 </html>

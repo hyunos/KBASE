@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- This page was created by Hyunho Shim. Please provide feedback via hyunho.shim@volvocars.com. -->
+<!-- Thank you to everyone who contributed to supporting knowledge data. -->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="refresh" content="600">
+	<link rel="icon" type="image/png" href="https://www.volvocars.com/static/shared/images/favicons/favicon-16x16.v2.svg">
+	<link href="./css/style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>각종 템플릿 | KBase</title>
+    <script src="./javascript/xlsx.full.min.js"></script>
+	<script src="./javascript/script.js"></script>
+</head>
+<body>
+<div class="topic">로깅 템플릿</div>
+<div style="text-align: center;">
+<button class="logging-button" onclick="logging2()" style="border: 2px solid red; color: red;">E Call</button>
+<button class="logging-button" onclick="logging3()" style="border: 2px solid #00B992; color: #00B992;">B Call</button>
+<button class="logging-button" onclick="logging1()">기본 로깅</button>
+<button class="logging-button" onclick="logging4()">RSA 소켓 발행</button>
+<button class="logging-button" onclick="svccsat()">서비스센터 칭찬</button>
+<button class="logging-button" onclick="svcdsat()">서비스센터 불만</button>
+<button class="logging-button" onclick="giftshow()">시승 기프티쇼 미수신</button>
+</div>
+<div class="topic">SMS 템플릿</div>
+<div style="text-align: center;">
+<button class="logging-button" onclick="defaultsms()">[SMS] 기본 메시지 템플릿</button>
+<button class="logging-button" onclick="mailtovolvo()">[SMS] 영상 및 사진 요청 메시지</button>
+<button class="logging-button" onclick="centerlocation()">[SMS] 센터 위치 및 연락처</button>
+<button class="logging-button" onclick="logging6()">[SMS] Volvo 트럭 고객지원센터 연락처</button>
+<button class="logging-button" onclick="logging7()">[SMS] Volvo 건설기계(중장비) 고객지원센터 연락처</button>
+<button class="logging-button" onclick="logging8()">[SMS] Flo 고객센터 연락처</button>
+<button class="logging-button" onclick="logging9()">[SMS] TMAP(티맵) 문의 방법</button>
+<button class="logging-button" onclick="logging10()">[SMS] 고속도로 사고 견인 (한국도로공사)</button>
+<button class="logging-button" onclick="logging11()">[SMS][T/S] 중앙 화면이 멈춘 경우</button>
+<button class="logging-button" onclick="logging12()">[SMS][T/S] EX30 중앙 화면이 멈춘 경우</button>
+<button class="logging-button" onclick="logging13()">[SMS][T/S] OTA 업데이트 이후 시동이 걸리지 않는 경우</button>
+<button class="logging-button" onclick="logging14()">[SMS][T/S] TCAM 재설정 방법 (네트워크 리셋)</button>
+</div>
+<div class="topic">메일 템플릿</div>
+<div style="text-align: center;">
+<button class="logging-button" onclick="logging15()">[메일] 일반 메일 양식</button>
+<button class="logging-button" onclick="logging16()">[메일] 서비스센터 및 딜러사 전달 메일</button>
+<button class="logging-button" onclick="logging17()">[메일] 서비스센터 출동 요청 메일</button>
+<button class="logging-button" onclick="logging18()">[메일] 시승이벤트 상품권 미지급 메일</button>
+<button class="logging-button" onclick="hejvolvo()">[메일] 헤이 볼보 앱 에스컬레이션</button>
+<button class="logging-button" onclick="declinemarketing()">[메일] 마케팅 문자 수신 거부</button>
+<button class="logging-button" onclick="ex30cancel()">[메일] EX30 취소 요청</button>
+<button class="logging-button" onclick="removedata()">[메일] 고객 정보 삭제 요청</button>
+
+
+</div>
+<div class="topic">라이프 스타일 숍</div>
+<div style="text-align: center;">
+
+<button class="logging-button" onclick="ls1()">고객 지원 센터 번호 안내</button>
+<button class="logging-button" onclick="ls2()">차량 온라인 예약 취소 요청</button>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    loadCategories();
+    loadExcelData();
+    document.getElementById('search-bar').addEventListener('keypress', handleKeyPress);
+    document.querySelector('.modal .close').addEventListener('click', closeModal);
+    document.getElementById('prev-page').addEventListener('click', prevPage);
+    document.getElementById('next-page').addEventListener('click', nextPage);
+    showAllDocuments(); // 페이지가 로드될 때 전체 목록을 기본으로 표시
+});
+
+function closeModal() {
+    const modal = document.getElementById('document-modal');
+    modal.style.display = 'none';
+}
+
+// 모달 내용 클릭시 닫히지 않도록 수정
+document.querySelector('.modal-content').addEventListener('click', function(event) {
+    event.stopPropagation();
+});
+
+window.onclick = function(event) {
+    const modal = document.getElementById('document-modal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+</script>
+    </body>
+</html>
