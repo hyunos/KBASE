@@ -50,42 +50,26 @@
 <button class="logging-button" onclick="declinemarketing()">[메일] 마케팅 문자 수신 거부</button>
 <button class="logging-button" onclick="ex30cancel()">[메일] EX30 취소 요청</button>
 <button class="logging-button" onclick="removedata()">[메일] 고객 정보 삭제 요청</button>
-
-
 </div>
 <div class="topic">라이프 스타일 숍</div>
 <div style="text-align: center;">
-
 <button class="logging-button" onclick="ls1()">고객 지원 센터 번호 안내</button>
 <button class="logging-button" onclick="ls2()">차량 온라인 예약 취소 요청</button>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    loadCategories();
-    loadExcelData();
-    document.getElementById('search-bar').addEventListener('keypress', handleKeyPress);
-    document.querySelector('.modal .close').addEventListener('click', closeModal);
-    document.getElementById('prev-page').addEventListener('click', prevPage);
-    document.getElementById('next-page').addEventListener('click', nextPage);
-    showAllDocuments(); // 페이지가 로드될 때 전체 목록을 기본으로 표시
-});
-
-function closeModal() {
-    const modal = document.getElementById('document-modal');
-    modal.style.display = 'none';
-}
-
-// 모달 내용 클릭시 닫히지 않도록 수정
-document.querySelector('.modal-content').addEventListener('click', function(event) {
-    event.stopPropagation();
-});
-
-window.onclick = function(event) {
-    const modal = document.getElementById('document-modal');
-    if (event.target === modal) {
-        closeModal();
-    }
-}
-</script>
     </body>
+<script>
+var userName;
+window.onload = function() {
+   userName = localStorage.getItem('userName');
+   if (!userName) {
+       userName = prompt("에이전트 이름을 입력하세요. \n입력하지 않으면 순로기가 됩니다.", "");
+       if (userName == null || userName == "") {
+           userName = "순로기";
+       }
+       localStorage.setItem('userName', userName);
+   }
+   var greetingElement = document.getElementById('greeting');
+   greetingElement.innerHTML = "Hej! " + userName.slice(-2);
+};
+</script>
 </html>
