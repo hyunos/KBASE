@@ -314,7 +314,7 @@ function logging3() {
 }
 
 function logging4() {
-    var customerName = "※ 영등포 / 마포 인근 지역 엔지니어 출동건은 모두 문래에서 출동 → 문래로 입고 프로세스 \n- 고객명: \n- 연락처: \n- 차량 번호: \n- 사고 여부:Y/N \n- 현재 위치: \n- 고객 요청 서비스센터(Y인 경우 센터명): Y/N \n- 기존 방문 서비스센터(DMS 기준 없으면 N): \n- 최종 입고 안내 서비스센터:";
+    var customerName = "※ 영등포 / 마포 인근 지역 엔지니어 출동건은 모두 문래에서 출동 → 문래로 입고 프로세스 \n※ 고객 입고 희망 서비스센터 없는 경우 네이버 지도 기준 최단 거리 센터 확인 \n- 고객명: \n- 연락처: \n- 차량 번호: \n- 사고 여부:Y/N \n- 현재 위치: \n- 고객 요청 서비스센터(Y인 경우 센터명): Y/N \n- 기존 방문 서비스센터(DMS 기준 없으면 N): \n- 최종 입고 안내 서비스센터(딜러사명 포함 안내 필요):";
     navigator.clipboard.writeText(customerName)
         .then(function() {
             console.log('RSA Template Copied');
