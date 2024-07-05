@@ -785,17 +785,24 @@ function copylogging6() {
 		error);
             alert('클립보드 복사 실패: ' + error);
 	});
-	
+}
+
+//Life Style Shop
 function lifestyle() {
-	var mail = 제목: [고객지원팀] 헤이볼보앱 (문의 사항)문의\n\n안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n고객께서 라이프스타일 숍에서 제품 구입 후 (환불 또는 취소) 주시어 확인 요청 드립니다. \n\n - 고객명: \n - 전화번호: \n- 아이디: \n - 주문 일자: \n\n감사합니다.\n\n" + userName + " 드림.";
+	var customerName = "고객명: ";
+    var ctn = "전화번호: ";
+    var styleshopid = "라이프스타일 숍 ID: ";
+    var orderdate = "주문 일자: ";
+    var emailText = customerName + "\n" + ctn + "\n" + styleshopid + "\n" +  orderdate;
     // Clipboard API를 사용하여 텍스트를 복사합니다.
-    navigator.clipboard.writeText(mail)
+    navigator.clipboard.writeText(emailText)
         .then(function() {
-		console.log('Template Copied');
+		console.log('양식이 복사되었습니다.');
             alert('양식이 복사되었습니다.');
 	})
         .catch(function(error) {
 		console.error('클립보드 복사 실패: ',
 		error);
             alert('클립보드 복사 실패: ' + error);
-	});}
+	});
+}
