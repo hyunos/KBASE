@@ -547,7 +547,7 @@ function logging13() {
         
 function logging14() {
 	var sms1 = "[Volvo 고객지원]";
-    var sms2 = "안녕하세요, 고객님. \n인포테인먼트 시스템의 인터넷이 안되는 경우 해결 방법입니다. \n\n1. 성애 제거 버튼을 약 20초 동안 누릅니다. 루프에 있는 SOS 버튼이 깜박이기 시작할 때까지 누른 상태를 유지합니다.\n2. 버튼을 놓습니다. \n3. 성에 제거 기능을 끄려면 성애 제거버튼을 한 번 더 누릅니다. \n3. 약 2분 동안 기다립니다. \n그래도 동일한 경우 48시간을 기다립니다. \n48시간 뒤 다시 시도하였음에도 동일한 경우 볼보 지정 서비스센터에 문의하세요.";
+    var sms2 = "안녕하세요, 고객님. \n인포테인먼트 시스템의 인터넷이 안되는 경우 해결 방법입니다. \n\n1. 성에 제거 버튼을 약 20초 동안 누릅니다. 루프에 있는 SOS 버튼이 깜박이기 시작할 때까지 누른 상태를 유지합니다.\n2. 버튼을 놓습니다. \n3. 성에 제거 기능을 끄려면 성에 제거버튼을 한 번 더 누릅니다. \n3. 약 2분 동안 기다립니다. \n그래도 동일한 경우 48시간을 기다립니다. \n48시간 뒤 다시 시도하였음에도 동일한 경우 볼보 지정 서비스센터에 문의하세요.";
     var sms4 = "오늘도 Volvo와 함께 편안하고 안전한 드라이빙 되시기를 바랍니다.";
     var sms5 = "Volvo 자동차 고객지원팀 " + userName + " 드림";
     var emailText = sms1 + "\n" + sms2 + "\n" + "\n" + sms4 + "\n" + sms5;
@@ -564,10 +564,11 @@ function logging14() {
 	});}
         
 function logging15() {
+	var title = "[Volvo 고객지원]";
 	var sms1 = "안녕하십니까 볼보 고객지원팀 " + userName + " 입니다.";
     var sms2 = "하기 내용으로 고객께서 문의주시어 발송 드립니다.";
     var sms4 = "" + userName + " 드림.";
-    var emailText = sms1 + "\n" + "\n" + sms2 + "\n" + "\n" + "\n" + sms4
+    var emailText = title + "\n" + sms1 + "\n" + "\n" + sms2 + "\n" + "\n" + "\n" + sms4
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(emailText)
         .then(function() {
@@ -774,23 +775,32 @@ function copylogging6() {
     var agentanswer= "Agent 답변: ";
     var emailText = customerName + "\n" + carNumber + "\n" + carVin + "\n" +  serviceCenter + "\n" + cxneeds + "\n" + needvalue + "\n" + needvalue + "\n" + needvalue + "\n" + agentanswer;
     // Clipboard API를 사용하여 텍스트를 복사합니다.
-    var textarea = document.createElement('textarea');
-    textarea.value = emailText;
-    textarea.setAttribute('readonly', '');
-    textarea.style.position = 'absolute';
-    textarea.style.left = '-9999px'; // Move off-screen
-    document.body.appendChild(textarea);
-    textarea.select();
+    navigator.clipboard.writeText(emailText)
+        .then(function() {
+		console.log('메일 양식이 복사되었습니다.');
+            alert('메일 양식이 복사되었습니다.');
+	})
+        .catch(function(error) {
+		console.error('클립보드 복사 실패: ',
+		error);
+            alert('클립보드 복사 실패: ' + error);
+	});
 
-    try {
-        var successful = document.execCommand('copy');
-        var msg = successful ? '복사되었습니다.' : '복사 실패';
-        console.log(msg);
-        alert(msg);
-    } catch (err) {
-        console.error('복사 실패: ', err);
-        alert('복사 실패: ' + err);
-    }
-
-    document.body.removeChild(textarea);
-}
+//Life Style Shop
+function lifestyle() {
+	var customerName = "고객명: ";
+    var ctn = "전화번호: ";
+    var styleshopid = "라이프스타일 숍 ID: ";
+    var orderdate = "주문 일자: ";
+    var emailText = customerName + "\n" + ctn + "\n" + styleshopid + "\n" +  orderdate;
+    // Clipboard API를 사용하여 텍스트를 복사합니다.
+    navigator.clipboard.writeText(emailText)
+        .then(function() {
+		console.log('양식이 복사되었습니다.');
+            alert('양식이 복사되었습니다.');
+	})
+        .catch(function(error) {
+		console.error('클립보드 복사 실패: ',
+		error);
+            alert('클립보드 복사 실패: ' + error);
+	});
