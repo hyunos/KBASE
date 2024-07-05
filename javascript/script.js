@@ -785,22 +785,3 @@ function copylogging6() {
 		error);
             alert('클립보드 복사 실패: ' + error);
 	});
-
-//Life Style Shop
-function lifestyle() {
-	var customerName = "고객명: ";
-    var ctn = "전화번호: ";
-    var styleshopid = "라이프스타일 숍 ID: ";
-    var orderdate = "주문 일자: ";
-    var emailText = customerName + "\n" + ctn + "\n" + styleshopid + "\n" +  orderdate;
-    // Clipboard API를 사용하여 텍스트를 복사합니다.
-    navigator.clipboard.writeText(emailText)
-        .then(function() {
-		console.log('양식이 복사되었습니다.');
-            alert('양식이 복사되었습니다.');
-	})
-        .catch(function(error) {
-		console.error('클립보드 복사 실패: ',
-		error);
-            alert('클립보드 복사 실패: ' + error);
-	});
