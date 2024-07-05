@@ -265,8 +265,8 @@ function logging1() {
 
 function logging2() {
     var notice = "* 소방에 연락하는 경우 즉시 고객의 위치(시)의 소방안전센터로 연결 요청하십시오.";
-    var location = "- 차량 위치: ";
-    var custstatus = "- 고객 현재 상태: ";
+    var location = "- CCC상 차량 위치: ";
+    var custstatus = "- 고객 현재 상태(하기 내용은 소방 신고 필요시에만 확인): ";
     var cust1 = "  • 의식이 있습니까: Y/N";
     var cust2 = "  • 말을 명확히 할 수 있습니까?: Y/N";
     var cust3 = "  • 움직일 수 있는 상태입니까?: Y/N";
@@ -387,7 +387,7 @@ function centerlocation() {
     var sms1 = "[Volvo 고객지원]";
     var sms2 = "안녕하세요, 고객님. \n요청하신 Volvo 서비스센터 위치 및 연락처입니다.";
     var sms3 = "(서비스센터 위치 및 번호 작성 란)";
-    var sms4 = "오늘도 Volvo와 함께 편안하고 안전한 드라이빙 되시기를 바랍니다.";
+    var sms4 = "오늘도 안전한 하루 되시기 바랍니다.";
     var sms5 = "Volvo 자동차 고객 지원팀 " + userName + " 드림";
     var emailText = sms1 + "\n" + sms2 + "\n" + sms3 + "\n" + "\n" + sms4 + "\n" + sms5;
     navigator.clipboard.writeText(emailText)
@@ -404,7 +404,7 @@ function centerlocation() {
 function logging6() {
 	var sms1 = "[Volvo 고객지원]";
     var sms2 = "안녕하세요, 고객님. \n요청하신 Volvo 트럭 고객지원센터 연락처입니다. \n\n☎ 080-038-1000";
-    var sms4 = "오늘도 편안하고 안전한 드라이빙 되시기 바랍니다.";
+    var sms4 = "오늘도 안전한 하루 되시기 바랍니다.";
     var sms5 = "Volvo 자동차 고객 지원팀 " + userName + " 드림";
     var emailText = sms1 + "\n" + sms2 + "\n" + "\n" + sms4 + "\n" + sms5;
     // Clipboard API를 사용하여 텍스트를 복사합니다.
@@ -422,7 +422,7 @@ function logging6() {
 function logging7() {
 	var sms1 = "[Volvo 고객지원]";
     var sms2 = "안녕하세요, 고객님. \n요청하신 Volvo 건설기계 고객지원센터 연락처입니다. \n\n☎ 1644-1172";
-    var sms4 = "오늘도 편안하고 안전한 드라이빙 되시기 바랍니다.";
+    var sms4 = "오늘도 안전한 하루 되시기 바랍니다.";
     var sms5 = "Volvo 자동차 고객 지원팀 " + userName + " 드림";
     var emailText = sms1 + "\n" + sms2 + "\n" + "\n" + sms4 + "\n" + sms5;
     // Clipboard API를 사용하여 텍스트를 복사합니다.
@@ -672,7 +672,7 @@ function hejvolvo() {
 	});}
 	
 function declinemarketing() {
-		var sms1 = "제목: [고객지원팀] 마케팅 수신 거부 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처: \n 상기 고객께서 마케팅 수신 거부 요청 주시어 수정 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
+		var sms1 = "제목: [고객지원팀] 마케팅 수신 거부 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처(인입번호): \n 상기 고객께서 마케팅 수신 거부 요청 주시어 변경 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
@@ -684,7 +684,21 @@ function declinemarketing() {
 		error);
             alert('클립보드 복사 실패: ' + error);
 	});}
-	
+
+function declinemarketing1() {
+		var sms1 = "제목: [고객지원팀] 마케팅 수신 거부 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 인입 번호: \n 실제 번호 사용자께서 마케팅 수신 거부 요청 주시어 변경 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
+    // Clipboard API를 사용하여 텍스트를 복사합니다.
+    navigator.clipboard.writeText(sms1)
+        .then(function() {
+		console.log('default mail Copied');
+            alert('마케팅 수신 거부(실제 사용자와 번호 사용자가 다른 경우) 문의 템플릿 복사되었습니다.');
+	})
+        .catch(function(error) {
+		console.error('클립보드 복사 실패: ',
+		error);
+            alert('클립보드 복사 실패: ' + error);
+	});}
+
 function removedata() {
 		var sms1 = "제목: [고객지원팀] 고객 정보 삭제 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처: \n 상기 고객께서 고객 정보 삭제 요청 주시어 삭제 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
