@@ -700,7 +700,7 @@ function removedata() {
 	});}
 	
 function ex30cancel() {
-		var sms1 = "제목: [고객지원팀] EX30 예약 취소 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처: \n - 예약 전시장: \n - 예약 일자: \n - 예약 번호(모르면 N/A): KR-  \n상기 고객께서 볼보 자동차 홈페이지를 통해 예약 취소가 불가능하시어 취소 요청 드립니다.\n바쁘시겠지만 고객 대응 후 회신 부탁드립니다. \n감사합니다.\n\n" + userName + " 드림.";
+		var sms1 = "제목: [고객지원팀] EX30 예약 취소 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처: \n - 예약 전시장: \n - 예약 일자: \n - 예약 번호(모르면 N/A): KR-  \n\n상기 고객께서 볼보 자동차 홈페이지를 통해 예약 취소가 불가능하시어 취소 요청 드립니다.\n바쁘시겠지만 고객 대응 후 회신 부탁드립니다. \n\n감사합니다.\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
@@ -732,7 +732,7 @@ function ls1() {
 	});}
 	
 function ls2() {
-	var sms1 = "* 예약 히스토리 확인 방법: EX30 예약 히스토리 보기 : 메인화면 ->  EX30  예약하기 클릭 -> 로그인 -> 오른쪽 상단의 이름 클릭 -> 내 예약 히스토리\n안녕하십니까? \n볼보 라이프스타일 고객센터 입니다.\n해당고객 온라인으로 취소를 진행하려 했으나 로그인이 원활하지 않아 환불 요청 하셨습니다. 확인 부탁드립니다.\n\n- 고객명: \n- 연락처: \n- 신청 전시장:\n- 예약번호: KR -\n\n감사합니다.";
+	var sms1 = "* 예약 히스토리 확인 방법: EX30 예약 히스토리 보기 : 메인화면 ->  EX30  예약하기 클릭 -> 로그인 -> 오른쪽 상단의 이름 클릭 -> 내 예약 히스토리\n안녕하십니까? \n볼보 라이프스타일 고객센터 입니다.\n해당고객 온라인으로 취소를 진행하려 했으나 로그인이 원활하지 않아 환불 요청 하셨습니다. 확인 부탁드립니다.\n\n- 고객명: \n- 연락처: \n- 신청 전시장:\n- 예약번호: KR -\n\n감사합니다. \n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
@@ -789,11 +789,14 @@ function copylogging6() {
 
 //Life Style Shop
 function lifestyle() {
+	var title = "[고객지원팀] 라이프스타일 숍 (주문 취소/환불 현황) 요청";
+	var first = "안녕하십니까? \n고객지원팀 " + userName + "입니다. \n하기 내용으로 고객 문의주시어 확인 요청드립니다.";
 	var customerName = "고객명: ";
     var ctn = "전화번호: ";
     var styleshopid = "라이프스타일 숍 ID: ";
     var orderdate = "주문 일자: ";
-    var emailText = customerName + "\n" + ctn + "\n" + styleshopid + "\n" +  orderdate;
+	var ended = "바쁘시겠지만 고객 지원을 위해 진행 후 회신 부탁드립니다. \n\n감사합니다 \n" + userName + " 드림.";
+    var emailText = title + "\n" + first + "\n" + "\n" + customerName + "\n" + ctn + "\n" + styleshopid + "\n" +  orderdate + "\n" + "\n" + ended;
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(emailText)
         .then(function() {
