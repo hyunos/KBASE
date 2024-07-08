@@ -566,7 +566,7 @@ function logging14() {
 function logging15() {
 	var title = "[Volvo 고객지원]";
 	var sms1 = "안녕하십니까 볼보 고객지원팀 " + userName + " 입니다.";
-    var sms2 = "하기 내용으로 고객께서 문의주시어 발송 드립니다.";
+    var sms2 = "하기 내용으로 고객께서 문의주시어 발송 드립니다. \n\n - 고객명: \n - 연락처: \n 차량번호/VIN: \n 모델명: ";
     var sms4 = "" + userName + " 드림.";
     var emailText = title + "\n" + sms1 + "\n" + "\n" + sms2 + "\n" + "\n" + "\n" + sms4
     // Clipboard API를 사용하여 텍스트를 복사합니다.
@@ -630,7 +630,7 @@ function logging16() {
 	});}
 	
 function logging17() {
-	var sms1 = "제목: [고객지원팀] 견인 현장 조치 불가 엔지니어 출동 요청 건 \n안녕하십니까. \n볼보 자동차 고객지원팀 " + userName + "입니다. \n\n 하기 고객께서 (사유)이유로 엔지니어 출동을 요청하시어 메일 드립니다.\n - 고객명: \n - 연락처: \n - 차량 위치 \n - 차종 / 차량번호: \n - 차대번호 \n - 최초 등록일: \n2. 출동 사유 \n- \n3. 출동 요청 서비스센터\n\n감사합니다. \n\n" + userName + " 드림.";
+	var sms1 = "제목: [고객지원팀] 견인 현장 조치 불가 엔지니어 출동 요청 건 \n안녕하십니까. \n볼보 자동차 고객지원팀 " + userName + "입니다. \n\n 하기 고객께서 (어떤 이유인지 적기)이유로 엔지니어 출동을 요청하시어 메일 드립니다.\n - 고객명: \n - 연락처: \n - 차량 위치 \n - 차종 / 차량번호: \n - 차대번호 \n - 최초 등록일: \n2. 출동 사유 \n- \n3. 출동 요청 서비스센터\n\n감사합니다. \n\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
@@ -672,7 +672,7 @@ function hejvolvo() {
 	});}
 	
 function declinemarketing() {
-		var sms1 = "제목: [고객지원팀] 마케팅 수신 거부 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처(인입번호): \n\n 상기 고객께서 마케팅 수신 거부 요청 주시어 변경 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
+		var sms1 = "제목: [고객지원팀] 마케팅 수신 거부 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처(인입번호): \n - 고객통합코드: \n\n 상기 고객께서 마케팅 수신 거부 요청 주시어 변경 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
@@ -686,7 +686,7 @@ function declinemarketing() {
 	});}
 
 function declinemarketing1() {
-		var sms1 = "제목: [고객지원팀] 마케팅 수신 거부 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 인입 번호: \n 실제 번호 사용자께서 마케팅 수신 거부 요청 주시어 변경 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
+		var sms1 = "제목: [고객지원팀] 마케팅 수신 거부 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 인입 번호: \n - 고객통합코드: \n\n 실제 번호 사용자께서 마케팅 수신 거부 요청 주시어 변경 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
@@ -700,7 +700,7 @@ function declinemarketing1() {
 	});}
 
 function removedata() {
-		var sms1 = "제목: [고객지원팀] 고객 정보 삭제 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처: \n 상기 고객께서 고객 정보 삭제 요청 주시어 삭제 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
+		var sms1 = "제목: [고객지원팀] 고객 정보 삭제 요청\n\안녕하십니까\n고객지원팀 " + userName + "입니다.\n\n - 고객명: \n - 연락처: \n - 고객통합코드: \n\n 상기 고객께서 고객 정보 삭제 요청 주시어 삭제 요청 드립니다. \n\n감사합니다.\n\n" + userName + " 드림.";
     // Clipboard API를 사용하여 텍스트를 복사합니다.
     navigator.clipboard.writeText(sms1)
         .then(function() {
